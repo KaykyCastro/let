@@ -1,18 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Logo from './assets/logo.png'
-import { ArchiveIcon, BagIcon } from '@phosphor-icons/react'
 import { Routes, Route } from 'react-router-dom'
 import Main from './components/Main'
+import { Layout } from './components/Layout'
+import Dashboard from './components/Dashboard/Dashboard'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <Routes>
-      <Route path='/' element={Main}/>
+      <Route element={<Layout/>}>
+      <Route path='/' element={<Main/>}/>
+      <Route path='/Dashboard' element={<Dashboard/>}/>
+      </Route>
     </Routes>
   )
 }
